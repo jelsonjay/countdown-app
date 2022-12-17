@@ -1,0 +1,120 @@
+/*======GOOGLE FONT======*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/*---CSS RESET--*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+	list-style: none;
+}
+/*======VARIABLES=======*/
+:root {
+	--mainChocolate: chocolate;
+	--mainGreen: hsl(120, 74%, 69%);
+	--mainOrange: orange;
+	--mainWhite: #fff;
+	--radius: 0.5rem;
+	--f-family: 'Poppins', sans-serif;
+	--bg: radial-gradient(
+		circle,
+		rgb(200, 59, 59),
+		rgb(207, 65, 207),
+		rgb(0, 94, 128)
+	);
+}
+body {
+	background-image: var(--bg);
+	transition: all 0.3s linear;
+	font-family: var(--f-family);
+}
+h1 {
+	text-align: center;
+	margin: 1rem;
+	text-transform: uppercase;
+	color: var(--mainWhite);
+}
+a {
+	text-decoration: none;
+}
+.header {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 30px;
+	font-size: 1.8em;
+}
+/*----Countdown----*/
+.main {
+	position: absolute;
+	width: 60rem;
+	height: 20rem;
+	margin: 0 auto;
+	top: 20%;
+	left: 100px;
+	right: 100px;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(20, 19, 19, 0.9);
+	align-items: center;
+	border-radius: var(--radius);
+}
+.countdown {
+	display: flex;
+	margin-top: 10px;
+}
+.countdown > div {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	background-color: rgba(49, 48, 48, 0.9);
+	color: var(--mainWhite);
+	margin: 0 35px;
+	font-size: 3rem;
+	font-weight: 500;
+	border-radius: 10px;
+}
+
+.countdown div:before {
+	content: ' ';
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	color: var(--mainWhite);
+	background: var(--mainChocolate);
+	font-size: 0.35em;
+	line-height: 35px;
+	font-weight: 400;
+}
+
+.countdown div#day:before {
+	content: 'Days';
+}
+
+.countdown div#hour:before {
+	content: 'Hours';
+}
+
+.countdown div#min:before {
+	content: 'Minutes';
+}
+
+.countdown div#sec:before {
+	content: 'Seconds';
+}
+#sec {
+	color: var(--mainGreen);
+}
+
+@media (max-width: 768px) {
+	.countdown > div {
+		display: flex;
+		flex-direction: column;
+	}
+}
